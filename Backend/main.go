@@ -7,6 +7,7 @@ import (
 	"inventory_backend/service"
 	"log"
 	"net/http"
+	"os"
 
 	jwtmiddleware "inventory_backend/middleware"
 
@@ -62,5 +63,10 @@ func main() {
 	defer db.Close()
 
 	log.Println("Server running at http://localhost:8080")
-	log.Fatal(e.Start(":8080"))
+	port := os.Getenv("PORT") // Cloud Run sets this automatically
+	if port == "" {
+		port = "8080" // default for local
+	}
+
+	e.Logger.Fatal(e.Start(":" + port))
 }

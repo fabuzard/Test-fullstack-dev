@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://34.101.244.42:8080"; 
+const API_URL = "https://inventory-backend-fabuzard2-b3f3496681aa.herokuapp.com"; 
 
 export async function LoginService(form, navigate) {
     try {
