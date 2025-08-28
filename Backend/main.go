@@ -25,7 +25,8 @@ func main() {
 
 	// Cors setup
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"http://localhost:5173"}, // frontend
+		// AllowOrigins: []string{"http://localhost:5173"}, // local
+		AllowOrigins: []string{"*"}, // for testing
 		AllowMethods: []string{echo.GET, echo.POST, echo.PUT, echo.DELETE},
 	}))
 
