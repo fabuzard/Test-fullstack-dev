@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const API_URL = "http://34.101.244.42:8080"; 
+
 export async function LoginService(form, navigate) {
     try {
-        const res = await axios.post("http://localhost:8080/login", form);
+        const res = await axios.post(`${API_URL}/login`, form);
         localStorage.setItem("token", res.data.token);
         navigate("/dashboard");
     } catch (err) {
@@ -13,11 +15,11 @@ export async function LoginService(form, navigate) {
 
 export async function RegisterService(form, navigate) {
     try {
-        await axios.post("http://localhost:8080/register", form);
+        await axios.post(`${API_URL}/register`, form);
         alert("Registered successfully! Please login.");
         navigate("/login");
-      } catch (err) {
+    } catch (err) {
         console.error(err);
         alert(err.response?.data?.error || "Registration failed");
-      }
     }
+}

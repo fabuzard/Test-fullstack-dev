@@ -4,7 +4,7 @@ import CreateBtn from "../components/CreateBtn";
 import { handleExportCSV } from "../services/ExportCsvService";
 import DashboardStats from "../components/DashboardStats";
 import ProductTable from "../components/ProductTable";
-import { getProducts,createProduct, updateProduct ,deleteProduct} from "../services/productService";
+import { getProducts,createProduct, updateProduct ,deleteProduct} from "../services/ProductService";
 
 function Dashboard() {
   const [products, setProducts] = useState([]);

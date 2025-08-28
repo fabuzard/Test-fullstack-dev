@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/products";
+const API_URL = "http://34.101.244.42:8080/products";
 
 // Helper to get headers with token
 function getAuthHeaders() {
